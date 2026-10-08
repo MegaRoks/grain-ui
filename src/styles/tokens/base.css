@@ -1,0 +1,10 @@
+/* Minimal resets + link colours. Grain UI ships no utility classes. */
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg-page);color:var(--text-body);
+  font-family:var(--font-sans);font-size:var(--text-14);line-height:var(--leading-normal);
+  letter-spacing:var(--tracking-body);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--link);text-decoration:none;transition:color var(--duration-hover) var(--ease-hover)}
+a:hover{color:var(--link-hover);text-decoration:underline;text-underline-offset:2px}
+:focus-visible{outline:none;box-shadow:var(--focus-ring)}
+::selection{background:var(--accent-200);color:var(--gray-950)}
+code,kbd,pre{font-family:var(--font-mono);font-size:.92em}

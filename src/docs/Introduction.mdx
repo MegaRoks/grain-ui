@@ -1,0 +1,28 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Введение" />
+
+# Grain UI
+
+Motion-first React UI kit. Принципы анимации: короткие длительности, `ease-out` на вход,
+отклик на нажатие `scale(0.97)` за 140ms, движение только через `transform` и `opacity`.
+
+## Установка
+
+```bash
+npm i github:MegaRoks/grain-ui lucide-react
+```
+
+```tsx
+import 'grain-ui/styles.css';
+import { Button } from 'grain-ui';
+
+<Button variant="solid" iconStart="rocket">Задеплоить</Button>
+```
+
+## Структура
+
+- **Foundations** — токены (цвет, отступы, радиусы, тени, motion). Читаются прямо из CSS, поэтому новые токены появляются здесь автоматически.
+- **Core / Forms / Navigation / Overlays / Feedback** — компоненты.
+
+Новый компонент: `npm run new -- Accordion --group navigation`.

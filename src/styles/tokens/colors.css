@@ -1,0 +1,20 @@
+/* Base palette. Warm-neutral greys, one signal blue, three semantics. */
+:root{
+  --gray-50:#FAFAF9;  --gray-100:#F4F4F3; --gray-150:#ECECEA; --gray-200:#E3E3E0;
+  --gray-300:#D3D3CF;  --gray-400:#B0B0AB; --gray-500:#8A8A85; --gray-600:#6B6B66;
+  --gray-700:#4F4F4B;  --gray-800:#33332F; --gray-900:#1F1F1C; --gray-950:#111110;
+  --white:#FFFFFF;
+
+  --accent-50:#EEF3FF;  --accent-100:#DCE6FF; --accent-200:#B9CCFF; --accent-300:#8CACFF;
+  --accent-400:#5C86FF; --accent-500:#2F6BFF; --accent-600:#1B4FD8; --accent-700:#1539A0;
+
+  --green-50:#E9F7EF;  --green-500:#12A150; --green-600:#0C7C3D;
+  --amber-50:#FDF4E3;  --amber-500:#D99100; --amber-600:#A96F00;
+  --red-50:#FDEDEE;    --red-500:#DC3B43;   --red-600:#B22A33;
+
+  /* Alpha inks — always prefer these over opaque greys for borders and scrims,
+     so a control reads correctly on any surface underneath it. */
+  --ink-a3:rgba(17,17,16,.03); --ink-a6:rgba(17,17,16,.06); --ink-a10:rgba(17,17,16,.10);
+  --ink-a16:rgba(17,17,16,.16); --ink-a30:rgba(17,17,16,.30); --ink-a60:rgba(17,17,16,.60);
+  --light-a8:rgba(255,255,255,.08); --light-a14:rgba(255,255,255,.14); --light-a70:rgba(255,255,255,.70);
+}
