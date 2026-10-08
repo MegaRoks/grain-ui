@@ -1,0 +1,5 @@
+/* Шрифты подключаются из npm (@fontsource-variable) в styles/index.css и попадают в dist. */
+:root{
+  --font-sans:"Geist Variable","Geist",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  --font-mono:"Geist Mono Variable","Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}

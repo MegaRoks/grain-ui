@@ -1,0 +1,51 @@
+/* Overlays: enter with opacity + scale(0.96) — never scale(0).
+   Popovers/tooltips scale from their trigger; dialogs stay centred. */
+.gr-scrim{position:absolute;inset:0;background:var(--scrim);opacity:1;
+  transition:opacity var(--duration-overlay) var(--ease-out)}
+.gr-scrim[data-state="closed"]{opacity:0}
+.gr-dialog{position:relative;width:100%;max-width:420px;background:var(--surface-overlay);
+  border-radius:var(--radius-overlay);box-shadow:var(--shadow-overlay);transform-origin:center;
+  opacity:1;transform:scale(1);
+  transition:opacity var(--duration-overlay) var(--ease-out),transform var(--duration-overlay) var(--ease-out)}
+.gr-dialog[data-state="closed"]{opacity:0;transform:scale(var(--enter-scale));
+  transition-duration:var(--duration-exit)}
+.gr-dialog__head{padding:var(--space-5) var(--space-5) 0}
+.gr-dialog__title{margin:0;font-size:var(--text-16);font-weight:var(--weight-semibold);
+  letter-spacing:var(--tracking-heading);color:var(--text-strong)}
+.gr-dialog__desc{margin:var(--space-1-5) 0 0;font-size:var(--text-13);color:var(--text-muted);text-wrap:pretty}
+.gr-dialog__body{padding:var(--space-4) var(--space-5)}
+.gr-dialog__foot{display:flex;justify-content:flex-end;gap:var(--space-2);padding:var(--space-4) var(--space-5) var(--space-5)}
+.gr-tooltip{position:absolute;z-index:40;padding:var(--space-1) var(--space-2);border-radius:var(--radius-6);
+  background:var(--gray-950);color:var(--gray-50);font-size:var(--text-12);white-space:nowrap;
+  box-shadow:var(--shadow-md);pointer-events:none;transform-origin:var(--transform-origin,bottom center);
+  opacity:1;transform:scale(1);
+  transition:opacity var(--duration-tooltip) var(--ease-out),transform var(--duration-tooltip) var(--ease-out)}
+.gr-tooltip[data-state="closed"]{opacity:0;transform:scale(.97)}
+.gr-tooltip[data-instant]{transition-duration:0ms}
+.gr-tooltip__kbd{margin-left:var(--space-1-5);padding:0 3px;border-radius:var(--radius-2);
+  background:var(--light-a14);color:var(--light-a70);font-family:var(--font-mono);font-size:10px}
+/* Toasts stack with a translate+scale ladder and use transitions (not keyframes)
+   so rapid inserts retarget smoothly. */
+.gr-toaster{position:absolute;right:var(--space-4);bottom:var(--space-4);width:356px;height:76px}
+.gr-toast{position:absolute;right:0;bottom:0;width:100%;display:flex;align-items:flex-start;gap:var(--space-2-5);
+  padding:var(--space-3);border-radius:var(--radius-card);background:var(--surface-overlay);
+  box-shadow:var(--shadow-lg);transform-origin:bottom center;
+  transition:transform var(--duration-drawer) var(--ease),opacity var(--duration-drawer) var(--ease)}
+.gr-toast[data-state="closed"]{opacity:0;transform:translateY(100%) scale(.98)}
+.gr-toast__icon{flex:none;margin-top:1px;display:flex}
+.gr-toast__title{font-size:var(--text-13);font-weight:var(--weight-medium);color:var(--text-strong)}
+.gr-toast__desc{margin-top:2px;font-size:var(--text-12);color:var(--text-muted)}
+.gr-toast__action{margin-left:auto}
+.gr-popover{position:absolute;z-index:30;min-width:200px;padding:var(--space-1-5);
+  border-radius:var(--radius-10);background:var(--surface-overlay);box-shadow:var(--shadow-overlay);
+  transform-origin:var(--transform-origin,top left);
+  opacity:1;transform:scale(1);
+  transition:opacity var(--duration-popover) var(--ease-out),transform var(--duration-popover) var(--ease-out)}
+.gr-popover[data-state="closed"]{opacity:0;transform:scale(var(--enter-scale));transition-duration:var(--duration-exit)}
+.gr-popover__item{display:flex;align-items:center;gap:var(--space-2);width:100%;height:28px;padding:0 var(--space-2);
+  border:0;background:transparent;border-radius:var(--radius-6);color:var(--text-body);
+  font-family:inherit;font-size:var(--text-13);text-align:left;cursor:pointer;
+  transition:background-color var(--duration-hover) var(--ease-hover)}
+.gr-popover__item[aria-current="true"]{background:var(--surface-selected);color:var(--text-accent)}
+.gr-popover__sep{height:1px;margin:var(--space-1) calc(var(--space-2) * -1 + 4px);background:var(--border-subtle)}
+@media (hover:hover) and (pointer:fine){.gr-popover__item:hover{background:var(--surface-hover)}}

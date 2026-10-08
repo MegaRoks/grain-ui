@@ -1,0 +1,9 @@
+:root{
+  --radius-2:2px; --radius-4:4px; --radius-6:6px; --radius-8:8px;
+  --radius-10:10px; --radius-14:14px; --radius-20:20px; --radius-full:999px;
+
+  /* Nested corners: inner radius = outer − padding, else corners look pinched. */
+  --radius-control:var(--radius-6);
+  --radius-card:var(--radius-10);
+  --radius-overlay:var(--radius-14);
+}

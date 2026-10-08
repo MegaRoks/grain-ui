@@ -1,0 +1,28 @@
+/* Motion tokens. Rules of thumb, from emilkowalski/skills:
+   - enter/exit -> --ease-out; on-screen movement -> --ease-in-out;
+     hover/colour -> --ease-hover; constant motion -> linear.
+   - never ease-in on UI; never animate from scale(0); keep UI under 300ms.
+   - exits are faster than enters. */
+:root{
+  --ease-out:cubic-bezier(0.23,1,0.32,1);/* @kind other */ 
+  --ease-in-out:cubic-bezier(0.77,0,0.175,1);/* @kind other */ 
+  --ease-drawer:cubic-bezier(0.32,0.72,0,1);/* @kind other */ 
+  --ease-hover:cubic-bezier(0.4,0,0.2,1);/* @kind other */ 
+
+  --duration-press:140ms;/* @kind other */ 
+  --duration-hover:160ms;/* @kind other */ 
+  --duration-tooltip:125ms;/* @kind other */ 
+  --duration-popover:180ms;/* @kind other */ 
+  --duration-dropdown:200ms;/* @kind other */ 
+  --duration-overlay:260ms;/* @kind other */ 
+  --duration-drawer:400ms;/* @kind other */ 
+  --duration-exit:160ms;/* @kind other */ 
+
+  --press-scale:0.97;/* @kind other */ 
+  --enter-scale:0.96;/* @kind other */ 
+  --stagger-step:50ms;/* @kind other */ 
+}
+@media (prefers-reduced-motion:reduce){
+  :root{--duration-press:1ms;/* @kind other */--duration-popover:1ms;/* @kind other */--duration-dropdown:1ms;/* @kind other */
+    --duration-overlay:1ms;/* @kind other */--duration-drawer:1ms;/* @kind other */--press-scale:1;/* @kind other */--enter-scale:1;/* @kind other */} 
+}
