@@ -32,6 +32,27 @@
   --focus-ring:var(--ring-focus);
   --link:var(--accent-600);
   --link-hover:var(--accent-700);
+  --surface-raised-hover:var(--gray-50);
+  --text-on-action:var(--white);
+  --action-danger-hover:var(--red-600);
+  --border-danger:var(--red-500);
+  --control-off:var(--gray-300);
+  --control-thumb:var(--white);
+  --tooltip-bg:var(--gray-950);
+  --tooltip-fg:var(--gray-50);
+  --tooltip-kbd-bg:var(--light-a14);
+  --tooltip-kbd-fg:var(--light-a70);
+  --selection-bg:var(--accent-200);
+  --selection-fg:var(--gray-950);
+
+  --status-accent-bg:var(--accent-50);  --status-accent-fg:var(--accent-700);  --status-accent-icon:var(--accent-500);
+  --status-success-bg:var(--green-50);  --status-success-fg:var(--green-600);  --status-success-icon:var(--green-500);
+  --status-warning-bg:var(--amber-50);  --status-warning-fg:var(--amber-600);  --status-warning-icon:var(--amber-500);
+  --status-danger-bg:var(--red-50);     --status-danger-fg:var(--red-600);     --status-danger-icon:var(--red-500);
+
+  --chart-1:var(--accent-500); --chart-2:var(--green-500); --chart-3:var(--amber-500); --chart-4:var(--gray-500); --chart-5:var(--red-500);
+  --chart-grid:var(--ink-a6);
+  --sidebar-w:240px;
 }
 :root[data-theme="dark"]{
   --bg-page:#0C0C0B;
@@ -63,4 +84,24 @@
   --shadow-md:0 4px 12px -2px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.08);
   --shadow-lg:0 12px 32px -8px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.09);
   --shadow-overlay:0 16px 48px -12px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.12);
+  --text-danger:#FF8A8F;
+  --link:var(--accent-300);
+  --link-hover:var(--accent-200);
+  --surface-raised-hover:#252522;
+  --action-danger-hover:#E5525A;
+  --border-danger:#F0646B;
+  --control-off:rgba(255,255,255,.16);
+  --tooltip-bg:#2C2C29;
+  --tooltip-fg:#FBFBF9;
+  --selection-bg:rgba(47,107,255,.4);
+  --selection-fg:#FBFBF9;
+
+  --status-accent-bg:rgba(47,107,255,.16); --status-accent-fg:var(--accent-300); --status-accent-icon:var(--accent-400);
+  --status-success-bg:rgba(18,161,80,.16); --status-success-fg:#5FD08E;          --status-success-icon:#3FC27A;
+  --status-warning-bg:rgba(217,145,0,.16); --status-warning-fg:#F2B544;          --status-warning-icon:#F0A92E;
+  --status-danger-bg:rgba(220,59,67,.18);  --status-danger-fg:#FF8A8F;           --status-danger-icon:#F06A70;
+
+  --chart-1:var(--accent-400); --chart-2:#3FC27A; --chart-3:#F0A92E; --chart-4:#8A8A85; --chart-5:#F06A70;
+  --chart-grid:rgba(255,255,255,.07);
+  --shadow-xs:0 1px 2px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.08);
 }

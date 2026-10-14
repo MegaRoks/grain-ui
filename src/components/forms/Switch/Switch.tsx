@@ -6,14 +6,14 @@ export interface SwitchProps extends Omit<React.InputHTMLAttributes<HTMLInputEle
   size?: 'md' | 'lg';
 }
 
-/** Переключатель с мгновенным применением. Бегунок движется только transform, 140ms ease-out. */
+/** Переключатель с мгновенным применением. Состояние — из :checked, работает и без контроля. */
 export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(function Switch(
-  { label, checked, disabled, size = 'md', className, ...rest },
+  { label, disabled, size = 'md', className, ...rest },
   ref,
 ) {
   return (
-    <label className={cx('gr-switch', checked && 'gr-switch--on', size === 'lg' && 'gr-switch--lg', disabled && 'gr-switch--disabled', className)} style={{ position: 'relative' }}>
-      <input ref={ref} type="checkbox" role="switch" checked={checked} disabled={disabled} {...rest} />
+    <label className={cx('gr-switch', size === 'lg' && 'gr-switch--lg', disabled && 'gr-switch--disabled', className)} style={{ position: 'relative' }}>
+      <input ref={ref} type="checkbox" role="switch" disabled={disabled} {...rest} />
       <span className="gr-switch__track"><span className="gr-switch__thumb" /></span>
       {label ? <span className="gr-switch__label">{label}</span> : null}
     </label>

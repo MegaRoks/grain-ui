@@ -1,0 +1,32 @@
+.gr-table-wrap{position:relative;overflow:auto;border-radius:var(--radius-card);background:var(--surface-card);box-shadow:var(--shadow-sm);outline:none}
+.gr-table-wrap:focus-visible{box-shadow:var(--shadow-sm),var(--focus-ring)}
+.gr-table{width:100%;border-collapse:separate;border-spacing:0;font-size:var(--text-13);color:var(--text-body);font-variant-numeric:tabular-nums}
+.gr-table th{position:sticky;top:0;z-index:1;height:36px;padding:0 var(--space-3);background:var(--surface-card);
+  box-shadow:inset 0 -1px 0 var(--border-subtle);text-align:left;white-space:nowrap;
+  font-size:var(--text-12);font-weight:var(--weight-medium);color:var(--text-muted)}
+.gr-table td{height:44px;padding:0 var(--space-3);box-shadow:inset 0 -1px 0 var(--border-subtle);vertical-align:middle}
+.gr-table tbody tr:last-child td{box-shadow:none}
+.gr-table--compact td{height:34px}
+.gr-table--compact th{height:32px}
+.gr-table th:first-child,.gr-table td:first-child{padding-left:var(--space-4)}
+.gr-table th:last-child,.gr-table td:last-child{padding-right:var(--space-4)}
+.gr-table tbody tr{transition:background-color var(--duration-hover) var(--ease-hover)}
+.gr-table tbody tr[data-selected]{background:var(--surface-selected)}
+@media (hover:hover) and (pointer:fine){.gr-table tbody tr:not([aria-hidden]):hover{background:var(--surface-hover)}
+  .gr-table tbody tr[data-selected]:hover{background:var(--surface-selected)}}
+.gr-table__check{width:40px;padding-right:0!important}
+.gr-table__check .gr-check{vertical-align:middle}
+.gr-table__sort{display:inline-flex;align-items:center;gap:var(--space-1);margin:0 calc(var(--space-1) * -1);padding:var(--space-1);
+  border:0;border-radius:var(--radius-4);background:transparent;color:inherit;font:inherit;cursor:pointer;
+  transition:color var(--duration-hover) var(--ease-hover),background-color var(--duration-hover) var(--ease-hover)}
+.gr-table__sort svg{color:var(--text-subtle)}
+.gr-table__sort[data-active]{color:var(--text-strong)}
+.gr-table__sort[data-active] svg{color:var(--text-strong)}
+.gr-table__sort:focus-visible{outline:none;box-shadow:var(--focus-ring)}
+@media (hover:hover) and (pointer:fine){.gr-table__sort:hover{color:var(--text-strong);background:var(--surface-hover)}}
+th[style*="right"] .gr-table__sort{flex-direction:row-reverse}
+.gr-table__empty{height:120px!important;text-align:center;color:var(--text-subtle)}
+/* indeterminate для чекбокса «выбрать все» */
+.gr-check input:indeterminate+.gr-check__box{background:var(--action-accent);box-shadow:none}
+.gr-check input:indeterminate+.gr-check__box svg{opacity:0}
+.gr-check input:indeterminate+.gr-check__box::before{content:"";width:8px;height:1.5px;border-radius:1px;background:var(--text-on-action)}

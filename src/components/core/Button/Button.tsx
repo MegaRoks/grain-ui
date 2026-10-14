@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { cx } from '../../../utils/cx';
-import { Icon } from '../Icon';
+import { Icon, type IconSource } from '../Icon';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** solid — главное действие, accent — бренд, secondary — по умолчанию, ghost — тулбар, danger — деструктивное. */
   variant?: 'solid' | 'accent' | 'secondary' | 'ghost' | 'danger';
   size?: 'sm' | 'md' | 'lg';
   /** Иконка Lucide перед текстом. */
-  iconStart?: string;
+  iconStart?: IconSource;
   /** Иконка Lucide после текста. */
-  iconEnd?: string;
+  iconEnd?: IconSource;
   /** Заменяет иконку спиннером и блокирует кнопку. */
   loading?: boolean;
   fullWidth?: boolean;

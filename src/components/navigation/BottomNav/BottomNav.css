@@ -1,0 +1,23 @@
+.gr-bottomnav{background:var(--surface-overlay);box-shadow:inset 0 1px 0 var(--border-subtle);padding-bottom:env(safe-area-inset-bottom)}
+.gr-bottomnav--fixed{position:fixed;left:0;right:0;bottom:0;z-index:40}
+.gr-bottomnav__list{list-style:none;margin:0;padding:0 var(--space-2);display:flex}
+.gr-bottomnav__list>li{flex:1;min-width:0}
+.gr-bottomnav__item{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;width:100%;min-height:56px;
+  padding:var(--space-1-5) 0;border:0;background:transparent;color:var(--text-subtle);text-decoration:none;cursor:pointer;
+  font-family:inherit;-webkit-tap-highlight-color:transparent;
+  transition:color var(--duration-hover) var(--ease-hover)}
+.gr-bottomnav__icon{position:relative;display:flex;align-items:center;justify-content:center;width:52px;height:28px;border-radius:var(--radius-full);
+  transition:background-color var(--duration-press) var(--ease-out),transform var(--duration-press) var(--ease-out)}
+.gr-bottomnav__item:active .gr-bottomnav__icon{transform:scale(.9)}
+.gr-bottomnav__item[aria-current="page"]{color:var(--text-strong)}
+.gr-bottomnav__item[aria-current="page"] .gr-bottomnav__icon{background:var(--surface-active)}
+.gr-bottomnav__item:focus-visible{outline:none}
+.gr-bottomnav__item:focus-visible .gr-bottomnav__icon{box-shadow:var(--focus-ring)}
+.gr-bottomnav__label{font-size:var(--text-11);font-weight:var(--weight-medium);letter-spacing:var(--tracking-micro);
+  max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gr-bottomnav__dot{position:absolute;top:2px;right:12px;width:8px;height:8px;border-radius:var(--radius-full);
+  background:var(--status-danger-icon);box-shadow:0 0 0 2px var(--surface-overlay)}
+.gr-bottomnav__count{position:absolute;top:-2px;left:30px;min-width:16px;height:16px;padding:0 4px;border-radius:var(--radius-full);
+  background:var(--status-danger-icon);color:var(--text-on-action);box-shadow:0 0 0 2px var(--surface-overlay);
+  font-size:10px;font-weight:var(--weight-semibold);line-height:16px;text-align:center;font-variant-numeric:tabular-nums}
+@media (hover:hover) and (pointer:fine){.gr-bottomnav__item:hover{color:var(--text-body)}}

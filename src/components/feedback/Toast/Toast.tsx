@@ -3,9 +3,9 @@ import { Icon } from '../../core/Icon';
 
 const TONE = {
   info: { icon: 'info', color: 'var(--text-muted)' },
-  success: { icon: 'circle-check', color: 'var(--green-500)' },
-  warning: { icon: 'triangle-alert', color: 'var(--amber-500)' },
-  error: { icon: 'circle-x', color: 'var(--red-500)' },
+  success: { icon: 'circle-check', color: 'var(--status-success-icon)' },
+  warning: { icon: 'triangle-alert', color: 'var(--status-warning-icon)' },
+  error: { icon: 'circle-x', color: 'var(--status-danger-icon)' },
   loading: { icon: 'loader-circle', color: 'var(--text-muted)' },
 } as const;
 

@@ -1,10 +1,20 @@
 import { render, screen } from '@testing-library/react';
-import { Icon } from './Icon';
+import { ArrowRight, Rocket } from 'lucide-react';
+import { Icon, registerIcons } from './Icon';
 
 describe('Icon', () => {
-  it('принимает kebab- и Pascal-имена', () => {
+  it('после registerIcons принимает kebab- и Pascal-имена', () => {
+    registerIcons({ ArrowRight });
     const { container } = render(<><Icon name="arrow-right" /><Icon name="ArrowRight" /></>);
     expect(container.querySelectorAll('svg')).toHaveLength(2);
+  });
+  it('принимает компонент напрямую', () => {
+    const { container } = render(<Icon name={Rocket} />);
+    expect(container.querySelector('svg')).toBeInTheDocument();
+  });
+  it('встроенные иконки кита доступны без регистрации', () => {
+    const { container } = render(<Icon name="chevron-down" />);
+    expect(container.querySelector('svg')).toBeInTheDocument();
   });
   it('декоративна без label', () => {
     const { container } = render(<Icon name="x" />);
@@ -14,8 +24,11 @@ describe('Icon', () => {
     render(<Icon name="x" label="Закрыть" />);
     expect(screen.getByRole('img', { name: 'Закрыть' })).toBeInTheDocument();
   });
-  it('неизвестное имя ничего не рендерит', () => {
-    const { container } = render(<Icon name="no-such-icon" />);
+  it('незарегистрированное имя ничего не рендерит и предупреждает один раз', () => {
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    const { container } = render(<><Icon name="no-such-icon" /><Icon name="no-such-icon" /></>);
     expect(container).toBeEmptyDOMElement();
+    expect(warn).toHaveBeenCalledTimes(1);
+    warn.mockRestore();
   });
 });

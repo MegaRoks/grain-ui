@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { cx } from '../../../utils/cx';
-import { Icon } from '../Icon';
+import { Icon, type IconSource } from '../Icon';
 
 export interface TagProps extends React.HTMLAttributes<HTMLSpanElement> {
   /** Иконка Lucide перед текстом. */
-  icon?: string;
+  icon?: IconSource;
   /** Если задан — показывается кнопка удаления. */
   onRemove?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   /** Доступное имя кнопки удаления. */

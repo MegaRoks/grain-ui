@@ -8,12 +8,12 @@ export interface RadioProps extends Omit<React.InputHTMLAttributes<HTMLInputElem
 
 /** Выбор одного из многих. Всегда внутри RadioGroup с общим name. */
 export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(function Radio(
-  { label, description, checked, disabled, className, ...rest },
+  { label, description, disabled, className, ...rest },
   ref,
 ) {
   return (
-    <label className={cx('gr-check', 'gr-check--radio', checked && 'gr-check--checked', disabled && 'gr-check--disabled', className)} style={{ position: 'relative' }}>
-      <input ref={ref} type="radio" checked={checked} disabled={disabled} {...rest} />
+    <label className={cx('gr-check', 'gr-check--radio', disabled && 'gr-check--disabled', className)} style={{ position: 'relative' }}>
+      <input ref={ref} type="radio" disabled={disabled} {...rest} />
       <span className="gr-check__box" />
       {label || description ? (
         <span className="gr-check__text">

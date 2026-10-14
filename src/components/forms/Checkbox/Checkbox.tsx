@@ -8,14 +8,14 @@ export interface CheckboxProps extends Omit<React.InputHTMLAttributes<HTMLInputE
   description?: React.ReactNode;
 }
 
-/** Чекбокс; галочка появляется через scale за 140ms ease-out. */
+/** Чекбокс: контролируемый (checked) или нет (defaultChecked). Отметка рисуется через CSS :checked. */
 export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(function Checkbox(
-  { label, description, checked, disabled, className, ...rest },
+  { label, description, disabled, className, ...rest },
   ref,
 ) {
   return (
-    <label className={cx('gr-check', checked && 'gr-check--checked', disabled && 'gr-check--disabled', className)} style={{ position: 'relative' }}>
-      <input ref={ref} type="checkbox" checked={checked} disabled={disabled} {...rest} />
+    <label className={cx('gr-check', disabled && 'gr-check--disabled', className)} style={{ position: 'relative' }}>
+      <input ref={ref} type="checkbox" disabled={disabled} {...rest} />
       <span className="gr-check__box"><Icon name="check" size={11} strokeWidth={2.5} /></span>
       {label || description ? (
         <span className="gr-check__text">

@@ -14,15 +14,18 @@ npm i github:MegaRoks/grain-ui lucide-react
 ```
 
 ```tsx
+import 'grain-ui/fonts.css';
 import 'grain-ui/styles.css';
 import { Button } from 'grain-ui';
+import { Rocket } from 'lucide-react';
 
-<Button variant="solid" iconStart="rocket">Задеплоить</Button>
+<Button variant="solid" iconStart={Rocket}>Задеплоить</Button>
 ```
 
 ## Структура
 
 - **Foundations** — токены (цвет, отступы, радиусы, тени, motion). Читаются прямо из CSS, поэтому новые токены появляются здесь автоматически.
-- **Core / Forms / Navigation / Overlays / Feedback** — компоненты.
+- **Layout / Core / Forms / Navigation / Data / Overlays / Feedback** — компоненты.
+- **Patterns** — собранные экраны (дашборд).
 
 Новый компонент: `npm run new -- Accordion --group navigation`.

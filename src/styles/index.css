@@ -1,5 +1,4 @@
-@import "@fontsource-variable/geist";
-@import "@fontsource-variable/geist-mono";
+/* Шрифты — отдельно: grain-ui/fonts.css (src/styles/fonts.css). */
 @import "./tokens/fonts.css";
 @import "./tokens/colors.css";
 @import "./tokens/typography.css";

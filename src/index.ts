@@ -16,8 +16,28 @@ export * from './components/overlays/Dialog';
 export * from './components/overlays/Popover';
 export * from './components/overlays/Tooltip';
 export * from './components/feedback/Toast';
+export * from './components/layout/Stack';
+export * from './components/layout/AppShell';
+export * from './components/navigation/Sidebar';
+export * from './components/data/Table';
+export * from './components/data/Avatar';
+export * from './components/data/Chart';
+export * from './components/feedback/Spinner';
+export * from './components/feedback/Skeleton';
+export * from './components/feedback/Progress';
+export * from './components/overlays/BottomSheet';
+export * from './components/navigation/BottomNav';
+export * from './components/forms/ColorSwatches';
+export * from './components/forms/ChipGroup';
+export * from './components/data/Heatmap';
 // @new-component-exports — генератор добавляет экспорты выше этой строки
 
 export { cx } from './utils/cx';
 export { usePresence } from './hooks/usePresence';
 export type { PresenceState } from './hooks/usePresence';
+export { useFloating, originFor } from './hooks/useFloating';
+export type { FloatingOptions, FloatingSide, FloatingAlign } from './hooks/useFloating';
+export { useFocusTrap, getFocusable } from './hooks/useFocusTrap';
+export { useScrollLock } from './hooks/useScrollLock';
+export { useElementSize } from './hooks/useElementSize';
+export { Portal } from './utils/Portal';

@@ -1,0 +1,5 @@
+/* Шрифты Geist отдельным файлом: import 'grain-ui/fonts.css'.
+   Копируется в dist как есть — бандлер приложения сам разрешит @fontsource и выложит
+   .woff2 отдельными файлами (а не base64 внутри styles.css). */
+@import "@fontsource-variable/geist";
+@import "@fontsource-variable/geist-mono";

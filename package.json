@@ -19,11 +19,13 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./styles.css": "./dist/styles.css"
+    "./styles.css": "./dist/styles.css",
+    "./fonts.css": "./dist/fonts.css"
   },
   "scripts": {
     "dev": "storybook dev -p 6006",
     "build": "vite build",
+    "postbuild": "node scripts/check-size.mjs",
     "build-storybook": "storybook build -o storybook-static",
     "test": "vitest run",
     "test:watch": "vitest",
