@@ -1,0 +1,22 @@
+.gr-chart{display:flex;flex-direction:column;gap:var(--space-2);min-width:0}
+.gr-chart__legend{display:flex;flex-wrap:wrap;gap:var(--space-1) var(--space-4);font-size:var(--text-12);color:var(--text-muted)}
+.gr-chart__legend span{display:inline-flex;align-items:center;gap:var(--space-1-5)}
+.gr-chart__legend i,.gr-chart__tip-row i{width:8px;height:8px;border-radius:2px;flex:none}
+.gr-chart__plot{position:relative;width:100%;min-width:0}
+.gr-chart__svg{display:block;overflow:visible;outline:none;border-radius:var(--radius-6);touch-action:pan-y}
+.gr-chart__svg:focus-visible{box-shadow:var(--focus-ring)}
+.gr-chart__grid{stroke:var(--chart-grid);stroke-width:1;shape-rendering:crispEdges}
+.gr-chart__tick{fill:var(--text-subtle);font-size:11px;font-family:var(--font-sans);font-variant-numeric:tabular-nums}
+.gr-chart__line{fill:none;stroke-width:1.75;stroke-linejoin:round;stroke-linecap:round}
+.gr-chart__cursor{stroke:var(--border-strong);stroke-width:1;shape-rendering:crispEdges}
+.gr-chart__dot{stroke:var(--surface-card);stroke-width:2}
+.gr-chart__band{fill:var(--surface-hover)}
+.gr-chart__bar{transition:opacity var(--duration-hover) var(--ease-hover)}
+.gr-chart__tip{position:absolute;z-index:2;transform:translateX(-50%);min-width:140px;padding:var(--space-2) var(--space-2-5);
+  border-radius:var(--radius-8);background:var(--surface-overlay);box-shadow:var(--shadow-md);pointer-events:none;
+  font-size:var(--text-12);display:flex;flex-direction:column;gap:var(--space-1)}
+.gr-chart__tip-x{color:var(--text-muted)}
+.gr-chart__tip-row{display:flex;align-items:center;gap:var(--space-1-5);color:var(--text-body)}
+.gr-chart__tip-row span{flex:1}
+.gr-chart__tip-row b{font-weight:var(--weight-medium);color:var(--text-strong);font-variant-numeric:tabular-nums}
+.gr-sparkline{display:block;flex:none;overflow:visible}

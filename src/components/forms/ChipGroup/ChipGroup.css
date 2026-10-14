@@ -1,0 +1,29 @@
+/* Чипы: невыбранный — поверхность с hairline, выбранный — инвертированный (action-solid).
+   Галочка у multiple раскрывается по ширине через grid-template-columns — без скачка соседей. */
+.gr-chips{display:flex;flex-wrap:wrap;gap:var(--space-1-5)}
+.gr-chips--scroll{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0 calc(var(--space-4) * -1);padding:2px var(--space-4);
+  scroll-padding:0 var(--space-4);-webkit-overflow-scrolling:touch}
+.gr-chips--scroll::-webkit-scrollbar{display:none}
+.gr-chip{position:relative;display:inline-flex;flex:none;cursor:pointer;user-select:none}
+.gr-chip input{position:absolute;opacity:0;width:0;height:0}
+.gr-chip__body{display:inline-flex;align-items:center;gap:var(--space-1-5);height:32px;padding:0 var(--space-3);
+  border-radius:var(--radius-full);background:var(--surface-raised);box-shadow:var(--shadow-xs);color:var(--text-body);
+  font-size:var(--text-13);font-weight:var(--weight-medium);white-space:nowrap;
+  transition:background-color var(--duration-press) var(--ease-out),color var(--duration-press) var(--ease-out),box-shadow var(--duration-hover) var(--ease-hover),transform var(--duration-press) var(--ease-out)}
+.gr-chips--sm .gr-chip__body{height:26px;padding:0 var(--space-2-5);font-size:var(--text-12)}
+.gr-chip:active .gr-chip__body{transform:scale(var(--press-scale))}
+.gr-chip__check{display:grid;grid-template-columns:0fr;margin-right:calc(var(--space-1-5) * -1);overflow:hidden;
+  transition:grid-template-columns var(--duration-press) var(--ease-out),margin var(--duration-press) var(--ease-out)}
+.gr-chip__check svg{min-width:0;opacity:0;transform:scale(.6);transition:opacity var(--duration-press) var(--ease-out),transform var(--duration-press) var(--ease-out)}
+.gr-chip__count{font-variant-numeric:tabular-nums;color:var(--text-subtle);transition:color var(--duration-press) var(--ease-out)}
+.gr-chip input:checked+.gr-chip__body{background:var(--action-solid);color:var(--text-inverse);box-shadow:var(--shadow-raised)}
+.gr-chip input:checked+.gr-chip__body .gr-chip__count{color:inherit;opacity:.7}
+.gr-chip input:checked+.gr-chip__body .gr-chip__check{grid-template-columns:1fr;margin-right:0}
+.gr-chip input:checked+.gr-chip__body .gr-chip__check svg{opacity:1;transform:scale(1)}
+.gr-chip input:focus-visible+.gr-chip__body{box-shadow:var(--shadow-xs),var(--focus-ring)}
+.gr-chip--disabled{opacity:.45;cursor:not-allowed}
+.gr-chip--disabled:active .gr-chip__body{transform:none}
+@media (hover:hover) and (pointer:fine){
+  .gr-chip:not(.gr-chip--disabled):hover .gr-chip__body{background:var(--surface-raised-hover);box-shadow:var(--shadow-sm)}
+  .gr-chip:not(.gr-chip--disabled):hover input:checked+.gr-chip__body{background:var(--action-solid-hover)}
+}

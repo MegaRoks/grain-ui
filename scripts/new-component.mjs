@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Генератор компонента: npm run new -- <Name> [--group core|forms|navigation|overlays|feedback|<любая>]
+// Генератор компонента: npm run new -- <Name> [--group layout|core|forms|navigation|data|overlays|feedback|<любая>]
 import { mkdirSync, writeFileSync, readFileSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -46,7 +46,7 @@ export const ${name} = React.forwardRef<HTMLDivElement, ${name}Props>(function $
   return <div ref={ref} className={cx('${cls}', variant !== 'default' && '${cls}--' + variant, className)} {...rest} />;
 });
 `,
-  [`${name}.css`]: `/* ${name}. Используйте только токены: var(--space-*), var(--radius-*), var(--ease-*), var(--duration-*). */
+  [`${name}.css`]: `/* ${name}. Только семантические токены: var(--surface-*), var(--text-*), var(--status-*), var(--space-*), var(--radius-*), var(--ease-*). Сырая палитра (--gray-*, --white) запрещена тестом. */
 .${cls}{display:flex;align-items:center;gap:var(--space-2);padding:var(--space-3);
   border-radius:var(--radius-control);color:var(--text-body)}
 .${cls}--subtle{color:var(--text-muted)}

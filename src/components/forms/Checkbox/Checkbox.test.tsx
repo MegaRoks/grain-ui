@@ -16,6 +16,14 @@ describe('Checkbox', () => {
     await userEvent.click(screen.getByText('Опция'));
     expect(box).toBeChecked();
   });
+  it('работает без контроля (defaultChecked и без пропа)', async () => {
+    render(<><Checkbox label="Один" defaultChecked /><Checkbox label="Два" /></>);
+    const one = screen.getByRole('checkbox', { name: 'Один' });
+    const two = screen.getByRole('checkbox', { name: 'Два' });
+    expect(one).toBeChecked();
+    await userEvent.click(two);
+    expect(two).toBeChecked();
+  });
   it('disabled не переключается', async () => {
     const onChange = vi.fn();
     render(<Checkbox label="X" disabled onChange={onChange} />);

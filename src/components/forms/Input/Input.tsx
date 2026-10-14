@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { cx } from '../../../utils/cx';
-import { Icon } from '../../core/Icon';
+import { Icon, type IconSource } from '../../core/Icon';
 
 export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {
   label?: React.ReactNode;
@@ -9,7 +9,7 @@ export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElem
   /** Текст ошибки; также включает invalid-кольцо. */
   error?: React.ReactNode;
   /** Иконка Lucide слева внутри поля. */
-  icon?: string;
+  icon?: IconSource;
   /** Статичный текст справа, напр. "px" или ".grain.dev". */
   suffix?: React.ReactNode;
   size?: 'sm' | 'md' | 'lg';

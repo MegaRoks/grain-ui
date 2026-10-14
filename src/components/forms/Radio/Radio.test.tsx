@@ -20,4 +20,10 @@ describe('Radio', () => {
     expect(screen.getByLabelText('B')).toBeChecked();
     expect(screen.getByLabelText('A')).not.toBeChecked();
   });
+  it('работает без контроля', async () => {
+    render(<RadioGroup label="Н">{['x', 'y'].map((v) => <Radio key={v} name="n" value={v} label={v} defaultChecked={v === 'x'} />)}</RadioGroup>);
+    await userEvent.click(screen.getByLabelText('y'));
+    expect(screen.getByLabelText('y')).toBeChecked();
+    expect(screen.getByLabelText('x')).not.toBeChecked();
+  });
 });

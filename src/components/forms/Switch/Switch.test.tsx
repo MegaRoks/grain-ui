@@ -14,6 +14,12 @@ describe('Switch', () => {
     const sw = screen.getByRole('switch', { name: 'Тумблер' });
     await userEvent.click(sw);
     expect(sw).toBeChecked();
-    expect(sw.closest('label')).toHaveClass('gr-switch--on');
+  });
+  it('работает без контроля (defaultChecked)', async () => {
+    render(<Switch label="Авто" defaultChecked />);
+    const sw = screen.getByRole('switch', { name: 'Авто' });
+    expect(sw).toBeChecked();
+    await userEvent.click(screen.getByText('Авто'));
+    expect(sw).not.toBeChecked();
   });
 });

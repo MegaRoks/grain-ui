@@ -1,0 +1,15 @@
+.gr-progress{display:flex;flex-direction:column;gap:var(--space-1-5);min-width:0}
+.gr-progress__head{display:flex;justify-content:space-between;gap:var(--space-2);font-size:var(--text-12)}
+.gr-progress__label{color:var(--text-body)}
+.gr-progress__value{color:var(--text-muted);font-variant-numeric:tabular-nums}
+.gr-progress__track{position:relative;height:6px;border-radius:var(--radius-full);background:var(--surface-inset);box-shadow:var(--shadow-inset);overflow:hidden}
+.gr-progress--sm .gr-progress__track{height:4px}
+.gr-progress__fill{position:absolute;inset:0;border-radius:inherit;background:var(--action-accent);transform-origin:left center;
+  transition:transform var(--duration-drawer) var(--ease-out)}
+.gr-progress--success .gr-progress__fill{background:var(--status-success-icon)}
+.gr-progress--warning .gr-progress__fill{background:var(--status-warning-icon)}
+.gr-progress--danger .gr-progress__fill{background:var(--status-danger-icon)}
+.gr-progress--neutral .gr-progress__fill{background:var(--text-muted)}
+.gr-progress__track--indeterminate .gr-progress__fill{right:auto;width:40%;animation:gr-progress-indet 1.2s var(--ease-in-out) infinite}
+@keyframes gr-progress-indet{from{transform:translateX(-100%)}to{transform:translateX(250%)}}
+@media (prefers-reduced-motion:reduce){.gr-progress__track--indeterminate .gr-progress__fill{animation:none;width:100%;opacity:.4}}

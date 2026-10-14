@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { cx } from '../../../utils/cx';
-import { Icon } from '../Icon';
+import { Icon, type IconSource } from '../Icon';
 
 export interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  /** Имя иконки Lucide. */
-  icon: string;
+  /** Имя зарегистрированной иконки или компонент lucide-react. */
+  icon: IconSource;
   /** Обязательное доступное имя — у кнопки нет текста. */
   label: string;
   variant?: 'ghost' | 'outline' | 'solid';

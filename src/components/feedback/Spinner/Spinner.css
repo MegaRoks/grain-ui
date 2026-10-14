@@ -1,0 +1,8 @@
+.gr-spinner{display:inline-flex;flex:none;color:var(--text-muted);width:16px;height:16px}
+.gr-spinner--sm{width:12px;height:12px}
+.gr-spinner--lg{width:24px;height:24px}
+.gr-spinner__ring{width:100%;height:100%;border-radius:var(--radius-full);border:1.5px solid var(--border-default);
+  border-top-color:currentColor;animation:gr-spin 640ms linear infinite}
+.gr-spinner--lg .gr-spinner__ring{border-width:2px}
+@keyframes gr-spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.gr-spinner__ring{animation-duration:1.6s}}
