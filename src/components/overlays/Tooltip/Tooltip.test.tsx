@@ -1,10 +1,9 @@
 import { render, screen, fireEvent, act } from '@testing-library/react';
 import { Tooltip } from './Tooltip';
 
-// задержка показа, затем кадр rAF, в котором usePresence ставит data-state="open"
 const openTip = () => {
   act(() => vi.advanceTimersByTime(450));
-  act(() => vi.advanceTimersByTime(20));
+  act(() => vi.advanceTimersToNextFrame());
 };
 
 describe('Tooltip', () => {
