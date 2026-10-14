@@ -25,7 +25,7 @@ npm run test:watch   # tests in watch mode
 From GitHub (the build runs automatically via `prepare`):
 
 ```bash
-npm i github:MegaRoks/grain-ui#v0.1.0 lucide-react
+npm i github:MegaRoks/grain-ui#v0.2.0 lucide-react
 ```
 
 ```tsx
